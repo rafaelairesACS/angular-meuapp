@@ -1,0 +1,12 @@
+<div class="alert alert-primary" role="alert" [hidden]="adcionado">
+    Funcionário adicionado: {{nome}}
+</div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input [(ngModel)]="nome" type="email" class="form-control" (focus)="adcionado = false">
+</div>
+
+<div>
+    <button (click)="adicionar()" type="button" class="btn btn-primary">Adicionar</button>
+</div>

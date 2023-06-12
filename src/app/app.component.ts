@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nome = 'rafael'
-  idade = 21
+  funcionarios = []
 
-  getIdade(){
-    return this.idade
+  aoAdicionar(funcionario){
+    this.funcionarios.push(funcionario)
   }
 }
