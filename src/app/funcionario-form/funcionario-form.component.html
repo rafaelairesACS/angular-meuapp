@@ -4,9 +4,13 @@
 
 <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input [(ngModel)]="nome" type="email" class="form-control" (focus)="adcionado = false">
+    <input [appCampocolorido]="'yellow'" #campo="campoColorido"
+     [(ngModel)]="nome"
+     type="email" class="form-control" (focus)="adcionado = false">
 </div>
 
 <div>
     <button (click)="adicionar()" type="button" class="btn btn-primary">Adicionar</button>
+    <button (click)="campo.colorir()" type="button" class="btn btn-primary">Colorir</button>
+    <button (click)="campo.descolorir()" type="button" class="btn btn-primary">Descolorir</button>
 </div>
