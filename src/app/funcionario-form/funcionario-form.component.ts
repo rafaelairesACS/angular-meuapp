@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { FuncionarioService } from '../funcionario.service';
 
 @Component({
   selector: 'app-funcionario-form',
@@ -7,21 +8,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class FuncionarioFormComponent {
 
-  ultimoId = 0;
-  nome = 'rafael'
+  funcionarioService : FuncionarioService
 
-  adcionado = false;
-  @Output('cirado') funcionarioAdcionado = new EventEmitter();
+  constructor(){
+    this.funcionarioService = new FuncionarioService();
+  }
 
-  adicionar() {
-    this.adcionado = true
-    
-    const funcionario = {
-      id: ++this.ultimoId,
-      nome: this.nome
-    };
-
-    this.funcionarioAdcionado.emit(funcionario)
+  adicionar(nome:string){
+    this.funcionarioService.adicionar(nome)
   }
 
 }
