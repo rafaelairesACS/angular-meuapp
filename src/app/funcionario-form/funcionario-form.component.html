@@ -1,4 +1,4 @@
-<div class="alert alert-primary" role="alert" [hidden]="adcionado">
+<div class="alert alert-primary" role="alert" [hidden]="!adicionado">
     Funcionário adicionado: {{nome}}
 </div>
 
@@ -6,11 +6,11 @@
     <label for="exampleInputEmail1">Email address</label>
     <input [appCampocolorido]="'yellow'" #campo="campoColorido"
      [(ngModel)]="nome"
-     type="email" class="form-control" (focus)="adcionado = false">
+     type="email" class="form-control" (focus)="adicionado = false">
 </div>
 
 <div>
-    <button (click)="adicionar()" type="button" class="btn btn-primary">Adicionar</button>
+    <button (click)="adicionar(nome)" type="button" class="btn btn-primary">Adicionar</button>
     <button (click)="campo.colorir()" type="button" class="btn btn-primary">Colorir</button>
     <button (click)="campo.descolorir()" type="button" class="btn btn-primary">Descolorir</button>
 </div>
